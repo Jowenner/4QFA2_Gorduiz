@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<style>
+    table, td{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <p id="beg"></p>
+    <label for="first"></label>
+    <input type="number" id="first" min="2" max="10">
+    <p id="by"></p>
+    <label for="second"></label>
+    <input type="number" id="second" min="2" max="10"></br></br>
+    <button onclick="Table()">Click here when ready!</button></br></br>
+    <table id="table"></table>
+   
+   <script>
+        document.getElementById('beg').innerHTML = "[Enter Two Values that are from 2 to 10]";
+        document.getElementById('by').innerHTML = "by";
+       
+        function Table() {
+
+            var first = parseInt(document.getElementById('first').value);
+            var second = parseInt(document.getElementById('second').value);
+
+            if(first < 2 || second < 2 || first > 10 || second > 10) {
+                alert("User, please enter number/s from 2 to 10");
+                return;
+            }
+        
+
+        var table = document.getElementById('table');
+        table.innerHTML = '';
+
+        for (var a = first; a <= second ; a++) {
+            var row = table.insertRow();
+                for (var b = first; b <= second; b++) {
+                    var cell = row.insertCell();
+                    cell.textContent =  (a*b);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
