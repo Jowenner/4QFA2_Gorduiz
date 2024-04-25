@@ -38,14 +38,14 @@
         var table = document.getElementById('table');
         table.innerHTML = '';
 
-        for (var a = first; a <= second ; a++) {
-            var row = table.insertRow();
-                for (var b = first; b <= second; b++) {
-                    var cell = row.insertCell();
-                    cell.textContent =  (a*b);
-                }
+        for (var a = Math.min(first, second); a <= Math.max(first, second); a++) {
+            let row = table.insertRow();
+                for (var b = Math.min(first, second); b <= Math.max(first, second); b++) {
+                let cell = row.insertCell();
+                cell.textContent =  (a * b);
             }
         }
+    }
     </script>
 </body>
 
